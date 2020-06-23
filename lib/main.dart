@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return new MaterialApp(
-      title: "Les widgets basiquesssss",
+      title: "Les widgets basiques",
       theme: new ThemeData(
         primarySwatch: Colors.red
       ),
