@@ -70,7 +70,7 @@ class _Home extends State {
             new Container(
 
               height: MediaQuery.of(context).size.width / 10,
-              margin: EdgeInsets.only(top: 20),
+              margin: EdgeInsets.only(top: largeur /4),
               child: new Text(
               'Salut les codeurs',
 
@@ -83,13 +83,27 @@ class _Home extends State {
         ),
             new Card(
               elevation: 10,
-              child :  new Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: 200,
-                child: new Image.asset(
-                    'images/voielacte.jpg',
-                     fit: BoxFit.cover,
-                ),
+              child :  Stack(
+                alignment: Alignment.center,
+                children: <Widget>[
+                   new Container(
+                    width: MediaQuery.of(context).size.width,
+                    height: 200,
+                    child: new Image.asset(
+                      'images/voielacte.jpg',
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  Center(
+                    child: new Text("ENTRER",
+                     style : new TextStyle(
+                      color: Colors.white,
+                      fontSize: 60,
+                       fontWeight: FontWeight.w900,
+                    ),
+                    ),
+                  ),
+                ],
 
               )
 
