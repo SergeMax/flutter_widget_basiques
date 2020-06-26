@@ -31,6 +31,11 @@ class Home extends StatefulWidget {
 }
 
 class _Home extends State {
+
+  bool addpressed = false;
+  bool pressedButton = false;
+
+
   @override
   Widget build(BuildContext context) {
 
@@ -70,7 +75,7 @@ class _Home extends State {
               'Salut les codeurs',
 
               style : new TextStyle(
-                color: Colors.grey[900],
+                color: (addpressed) ? Colors.grey[900] : Colors.greenAccent,
                 fontSize: 30.0,
                 fontStyle: FontStyle.italic,
               ),
@@ -93,33 +98,75 @@ class _Home extends State {
                 icon: new Icon(Icons.add_box),
                 onPressed: () {
                   print("Bouton pressé");
+                  setState(() {
+                    addpressed = !addpressed;
+                  });
+                  print(addpressed);
                 }),
-            new Container(
+            new Container( //DOWNBAR
               height: MediaQuery.of(context).size.width / 8,
               color: Colors.white60,
               margin: EdgeInsets.only(left: 20, right: 20, bottom: 20),
-              child: new Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+              child: new Row( //row globale
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  new Icon(
-                    Icons.accessibility,
-                  color: Colors.grey[300],
-                  size: largeur /13,
+              new Row( // row Left
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+
+                 new Row(
+                     mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children : <Widget>[
+
+                        SizedBox(
+                          width: largeur/5.5, // hard coding child width
+                          child:  new Icon(
+                            Icons.accessibility,
+                            color: Colors.grey[300],
+                            size: largeur /13,
+                          ),
+                        ),
+                        SizedBox(
+                          width: largeur/5.5, // hard coding child width
+                          child:new Icon(
+                            Icons.account_box,
+                            color: Colors.grey[300],
+                            size: largeur /13,
+                          ),
+                        ),
+
+
+
+                      ]
                   ),
-                  new Icon(
-                    Icons.account_box,
-                    color: Colors.grey[300],
-                    size: largeur /13,
-                  ),
-                  new Icon(
-                    Icons.account_circle,
-                    color: Colors.grey[300],
-                    size: largeur /13,
-                  ),
-                  new Icon(
-                    Icons.accessible,
-                    color: Colors.grey[300],
-                    size: largeur /13,
+                ],
+              ),
+
+
+                  new Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children : <Widget>[
+
+                        SizedBox(
+                          width: largeur/5.5, // hard coding child width
+                          child:  new Icon(
+                            Icons.accessibility,
+                            color: Colors.grey[300],
+                            size: largeur /13,
+                          ),
+                        ),
+                        SizedBox(
+                          width: largeur/5.5, // hard coding child width
+                          child:new Icon(
+                            Icons.account_box,
+                            color: Colors.grey[300],
+                            size: largeur /13,
+                          ),
+                        ),
+
+
+
+                      ]
                   ),
                 ],
               ),
@@ -129,7 +176,21 @@ class _Home extends State {
 
       ),
 
+      floatingActionButton: new FloatingActionButton(
+          onPressed: functPressedButton,
+        elevation: 10.0,
+        tooltip: "changer pressedButton",
+        child: new Icon(Icons.add),
+        backgroundColor: Colors.amber,
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
 
     );
+  }
+
+  void functPressedButton () {
+    setState(() {
+      pressedButton = !pressedButton;
+    });
   }
 }
