@@ -72,12 +72,12 @@ class _Home extends State {
               height: MediaQuery.of(context).size.width / 10,
               margin: EdgeInsets.only(top: largeur /4),
               child: new Text(
-              'Salut les codeurs',
+              'Ready?',
 
               style : new TextStyle(
-                color: (addpressed) ? Colors.grey[900] : Colors.greenAccent,
+                color: (addpressed) ? Colors.white70 : Colors.white,
                 fontSize: 30.0,
-                fontStyle: FontStyle.italic,
+                fontWeight: FontWeight.bold,
               ),
             ),
         ),
@@ -95,7 +95,7 @@ class _Home extends State {
                     ),
                   ),
                   Center(
-                    child: new Text("ENTRER",
+                    child: new Text("ENTER",
                      style : new TextStyle(
                       color: Colors.white,
                       fontSize: 60,
@@ -110,6 +110,7 @@ class _Home extends State {
             ),
             new IconButton(
                 icon: new Icon(Icons.add_box),
+                color: Colors.white70,
                 onPressed: () {
                   print("Bouton pressé");
                   setState(() {
@@ -136,7 +137,7 @@ class _Home extends State {
                           width: largeur/5.5, // hard coding child width
                           child:  new Icon(
                             Icons.accessibility,
-                            color: Colors.grey[300],
+                            color: Colors.white70,
                             size: largeur /13,
                           ),
                         ),
@@ -144,7 +145,7 @@ class _Home extends State {
                           width: largeur/5.5, // hard coding child width
                           child:new Icon(
                             Icons.account_box,
-                            color: Colors.grey[300],
+                            color: Colors.white70,
                             size: largeur /13,
                           ),
                         ),
@@ -165,7 +166,7 @@ class _Home extends State {
                           width: largeur/5.5, // hard coding child width
                           child:  new Icon(
                             Icons.accessibility,
-                            color: Colors.grey[300],
+                            color: Colors.white70,
                             size: largeur /13,
                           ),
                         ),
@@ -173,7 +174,7 @@ class _Home extends State {
                           width: largeur/5.5, // hard coding child width
                           child:new Icon(
                             Icons.account_box,
-                            color: Colors.grey[300],
+                            color: Colors.white70,
                             size: largeur /13,
                           ),
                         ),
